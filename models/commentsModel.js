@@ -20,11 +20,6 @@ const commentSchema = new mongoose.Schema(
 		  type: Date,
 		  default: Date.now,
     },
-		// true: 隱藏資料、false: 顯示在畫面上
-    logicDeleteFlag: {
-	    type: Boolean,
-	    default: false,
-	  },
   },
   {
     versionKey: false

@@ -3,12 +3,11 @@ const getHttpResponse = require('../service/successHandler');
 
 const validator = require('validator');
 
-const User = require('../models/usersModel');
 const Post = require('../models/postsModel');
 const Comment = require('../models/commentsModel');
 
 const posts = {
-  getPosts: handleErrorAsync(async (req, res, next) => {
+  getPosts: handleErrorAsync(async (req, res) => {
     const { q, sort = 'desc' } = req.query;
     const filter = q ? { content: new RegExp(q) } : {};
     const posts = await Post.find(filter)
@@ -31,7 +30,7 @@ const posts = {
 
     // 判斷圖片開頭是否為 http
     if (image && image.length > 0) {
-      image.forEach(function (item, index, array) {
+      image.forEach(function (item) {
         let result = item.split(":");
         if (!validator.equals(result[0], 'https')) {
           return next(appError(400, ' 格式錯誤', ' 圖片格式不正確！'));
