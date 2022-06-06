@@ -6,6 +6,7 @@ const cors = require('cors');
 
 const postsRouter = require('./routes/posts');
 const usersRouter = require('./routes/users');
+const uploadsRouter = require('./routes/uploads');
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/posts', postsRouter);
 app.use('/users', usersRouter);
+app.use('/uploads', uploadsRouter);
 
 /* 錯誤處理 */
 require('./service/process');

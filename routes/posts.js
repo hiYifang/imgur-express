@@ -1,7 +1,7 @@
 const express = require('express');
+const router = express.Router();
 const PostsControllers = require('../controllers/postsControllers');
 const { isAuth } = require('../service/auth');
-const router = express.Router();
 
 // 觀看所有動態
 router.get('/', isAuth, PostsControllers.getPosts);
