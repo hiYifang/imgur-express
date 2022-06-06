@@ -33,13 +33,14 @@ const posts = {
       image.forEach(function (item) {
         let result = item.split(":");
         if (!validator.equals(result[0], 'https')) {
-          return next(appError(400, ' 格式錯誤', ' 圖片格式不正確！'));
+          return next(appError(400, "新增失敗，圖片格式不正確", "image"))
         }
       });
     }
 
-    if (!content)
-      return next(appError(400, ' 格式錯誤', ' 欄位未填寫正確！'));
+    if (!content) {
+      return next(appError(400, "新增失敗，內容未正確填寫", "image"))
+    }
 
     const newPost = await Post.create({ editor: user, content, image });
 
