@@ -1,0 +1,452 @@
+{
+	"info": {
+		"_postman_id": "f1572ed8-61ce-4940-a00c-490782d24714",
+		"name": "NodeJS_W7_Imgur Express - heroku",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9583539"
+	},
+	"item": [
+		{
+			"name": "註冊",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nickName\":\"qq12345678\",\n    \"email\":\"qq12345678@gmail.com\",\n    \"password\":\"qq12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hidden-cove-19744.herokuapp.com/users/sign_up",
+					"protocol": "https",
+					"host": [
+						"hidden-cove-19744",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						"sign_up"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "desc",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "登入",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"qq12345678@gmail.com\",\n    \"password\":\"qq12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hidden-cove-19744.herokuapp.com/users/sign_in",
+					"protocol": "https",
+					"host": [
+						"hidden-cove-19744",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						"sign_in"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "desc",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "重設密碼",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer XXX",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"password\":\"qq12345678\",\n    \"confirmPassword\": \"qq12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hidden-cove-19744.herokuapp.com/users/updatePassword",
+					"protocol": "https",
+					"host": [
+						"hidden-cove-19744",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						"updatePassword"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "desc",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "取得個人資料",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer XXX",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hidden-cove-19744.herokuapp.com/users/profile",
+					"protocol": "https",
+					"host": [
+						"hidden-cove-19744",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						"profile"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "desc",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "更新個人資料",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer XXX",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nickName\":\"ABC\",\n    \"gender\": \"1\",\n    \"avatar\": \"https://images.unsplash.com/photo-1652790228045-5f93170628dd?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=700\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hidden-cove-19744.herokuapp.com/users/profile",
+					"protocol": "https",
+					"host": [
+						"hidden-cove-19744",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						"profile"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "desc",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "觀看所有動態",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer XXX",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hidden-cove-19744.herokuapp.com/posts",
+					"protocol": "https",
+					"host": [
+						"hidden-cove-19744",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "desc",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "張貼個人動態",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer XXX",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\":\"大海好美喔\",\n    \"image\":[\"https://images.unsplash.com/photo-1654423625700-454987d4b73c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=700&q=60\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hidden-cove-19744.herokuapp.com/posts",
+					"protocol": "https",
+					"host": [
+						"hidden-cove-19744",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "desc",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "上傳貼文圖片",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer XXX",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "https://hidden-cove-19744.herokuapp.com/uploads",
+					"protocol": "https",
+					"host": [
+						"hidden-cove-19744",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"uploads"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "desc",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
